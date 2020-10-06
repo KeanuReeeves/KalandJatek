@@ -17,6 +17,39 @@ namespace KalandJatek
         int dmg;
         int agi;
 
+        public Character(string name, string cast)
+        {
+            this.name = name;
+            this.cast = cast;
+
+            Lvl = 1;
+            Exp = 0;
+            if (cast == "warrior")
+            {
+                Hp = 100;
+                maxhp = 100;
+                Dmg = 10;
+                Agi = 3;
+            }
+            else if (cast == "mage")
+            {
+                Hp = 70;
+                maxhp = 70;
+                Dmg = 20;
+                Agi = 2;
+            }
+            else if (cast == "priest")
+            {
+                Hp = 90;
+                maxhp = 90;
+                Dmg = 8;
+                Agi = 1;
+            }
+            else
+            {
+
+            }
+        }
         public int Hp
         {
             get => hp;
@@ -60,39 +93,7 @@ namespace KalandJatek
         public int Dmg { get => dmg; set => dmg = value; }
         public int Agi { get => agi; set => agi = value; }
 
-        public Character(string name,string cast)
-        {
-            this.name = name;
-            this.cast = cast;
-            
-            Lvl = 1;
-            Exp = 0;
-            if (cast == "warrior")
-            {
-                Hp = 100;
-                maxhp = 100;
-                Dmg = 10;
-                Agi = 3;
-            }
-            else if (cast == "mage")
-            {
-                Hp = 70;
-                maxhp = 70;
-                Dmg = 20;
-                Agi = 2;
-            }
-            else if (cast == "priest")
-            {
-                Hp = 90;
-                maxhp = 90;
-                Dmg = 8;
-                Agi = 1;
-            }
-            else
-            { 
-                
-            }
-        }
+        
         public string getName()
         {
             return this.name;
