@@ -42,7 +42,8 @@ namespace KalandJatek
                 if (value>lvl)
                 {
                     Dmg += lvl * 3;
-
+                    Agi += lvl * 2;
+                    maxhp += lvl * 20;
                 }    
             } 
         }
@@ -76,12 +77,14 @@ namespace KalandJatek
             else if (cast == "mage")
             {
                 Hp = 70;
+                maxhp = 70;
                 Dmg = 20;
                 Agi = 2;
             }
             else if (cast == "priest")
             {
                 Hp = 90;
+                maxhp = 90;
                 Dmg = 8;
                 Agi = 1;
             }
@@ -100,8 +103,16 @@ namespace KalandJatek
             return this.cast;
         }
 
-        
 
+        public override string ToString()
+        {
+            return string.Format("Name:{0}\n" +
+                                 "Class: {1}\n" +
+                                 "HP: {2}/{3}\n" +
+                                 "Exp: {4}/{5}\n" +
+                                 "Dmg: {6}\n" +
+                                 "Agi: {7}", this.name, this.cast,this.hp,this.maxhp,this.exp,this.SzuksegesExp(),this.dmg,this.agi);
+        }
 
     }
 }
