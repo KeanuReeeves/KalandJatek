@@ -106,12 +106,12 @@ namespace KalandJatek
 
         public override string ToString()
         {
-            return string.Format("Name:{0}\n" +
+            return string.Format("\nName:{0}\n" +
                                  "Class: {1}\n" +
                                  "HP: {2}/{3}\n" +
                                  "Exp: {4}/{5}\n" +
                                  "Dmg: {6}\n" +
-                                 "Agi: {7}", this.name, this.cast,this.hp,this.maxhp,this.exp,this.SzuksegesExp(),this.dmg,this.agi);
+                                 "Agi: {7}\n", this.name, this.cast,this.hp,this.maxhp,this.exp,this.SzuksegesExp(),this.dmg,this.agi);
         }
 
     }
