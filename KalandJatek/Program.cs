@@ -19,12 +19,14 @@ namespace KalandJatek
         {
             Console.WriteLine("Új karakter: '1'");
             Console.WriteLine("Kör inditás: '2'");
-            var key = Console.ReadKey();
-            if (key.Key == ConsoleKey.D1)
+
+            var bind = Console.ReadKey().Key;
+
+            if (bind == ConsoleKey.D1)
             {
                 new_character();
             }
-            else if(key.Key == ConsoleKey.D2)
+            else if(bind == ConsoleKey.D2)
             {
                 game();
             }
@@ -48,8 +50,12 @@ namespace KalandJatek
 
         public static void game()
         {
+            foreach (var item in karakterek)
+            {
+                Console.WriteLine(karakterek);
 
-            Console.WriteLine("s");
+            }
+            
         }
     }
 }
