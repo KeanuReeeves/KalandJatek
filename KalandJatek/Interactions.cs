@@ -8,7 +8,7 @@ namespace KalandJatek
 {
     class Interactions
     {
-        public void Fight(Character character1, Character character2)
+        public static void Fight(Character character1, Character character2)
         {
             if(character1.Hp <= 0 || character2.Hp <= 0)
             {
@@ -37,7 +37,7 @@ namespace KalandJatek
             }
         }
 
-        public void Heal(Character character)
+        public static void Heal(Character character)
         {
             int heal_value = 0;
             if (character.getCast() == "warrior")

@@ -9,6 +9,8 @@ namespace KalandJatek
     class Program
     {
         public static List<Character> karakterek = new List<Character>();
+        public static int current = 0;
+
         static void Main(string[] args)
         {
             menu();
@@ -41,19 +43,46 @@ namespace KalandJatek
                     "Továbblépéshez: 'tovább'");
                 text = Console.ReadLine();
                 string[] st = text.Split(' ');
+                if (st[0] != "tovább") 
+                { 
                 var name = new Character(st[0], st[1]);
                 karakterek.Add(name);
+                }
             } while (text != "tovább");
+            menu();
         }
 
         public static void game()
         {
-            foreach (var item in karakterek)
+            for (int i = 0; i < karakterek.Count; i++)
             {
-                Console.WriteLine(karakterek);
-
+                Console.WriteLine("sorszám: " + i + ".\n" + karakterek[i]);
             }
-            
+
+            ConsoleKey bind;
+
+            do
+            {
+                Console.WriteLine("Harc: '1'");
+                Console.WriteLine("Heal: '2'");
+                Console.WriteLine("Kilépés a menübe: '3'");
+                bind = Console.ReadKey().Key;
+                if (bind == ConsoleKey.D1)
+                {
+                    Console.Write("Add meg a cél karakter sorszámát: ");
+                    int input = Convert.ToInt32(Console.ReadLine());
+                    Interactions.Fight(karakterek[current], karakterek[input]);
+                }
+                else if (bind == ConsoleKey.D2)
+                {
+                    Interactions.Heal(karakterek[current]);
+                }
+                current++;
+                if(current > karakterek.Count)
+                {
+                    current = 0;
+                }
+            } while (bind != ConsoleKey.D3);
         }
     }
 }
