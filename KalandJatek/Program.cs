@@ -12,18 +12,19 @@ namespace KalandJatek
         static void Main(string[] args)
         {
             menu();
+            Console.ReadKey();
         }
 
         public static void menu()
         {
             Console.WriteLine("Új karakter: '1'");
             Console.WriteLine("Kör inditás: '2'");
-
-            if (Console.ReadKey().Key == ConsoleKey.D1)
+            var key = Console.ReadKey();
+            if (key.Key == ConsoleKey.D1)
             {
                 new_character();
             }
-            if(Console.ReadKey().Key == ConsoleKey.D2)
+            else if(key.Key == ConsoleKey.D2)
             {
                 game();
             }
@@ -43,6 +44,7 @@ namespace KalandJatek
                 karakterek.Add(name);
             } while (text != "tovább");
         }
+
 
         public static void game()
         {
