@@ -14,6 +14,7 @@ namespace KalandJatek
         static void Main(string[] args)
         {
             menu();
+            Console.ReadKey();
         }
 
         public static void menu()
@@ -51,6 +52,7 @@ namespace KalandJatek
             } while (text != "tovább");
             menu();
         }
+
 
         public static void game()
         {
